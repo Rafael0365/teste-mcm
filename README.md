@@ -4,7 +4,7 @@
 Desafio feito em tempo limitado para o teste do processo seletivo MCM. Em que foi construido um CRUD em Laravel com tabelas criadas usando migrations e criadas telas utilizando blade template.
 
 ## Deploy
-O projeto esta armazenado no heroku, <a href="https://github.com/laravel/framework/actions"> Link para visualização do projeto</a>
+O projeto esta armazenado no heroku, <a href="https://crud-mercadinho-5e86686b969b.herokuapp.com"> Link para visualização do projeto</a>
 
 
 
