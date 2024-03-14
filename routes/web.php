@@ -12,15 +12,15 @@ use App\Http\Controllers\ProdutoController;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
-|
+|->middleware('auth')
 */
-Route::get('/produtos', [ProdutoController::class,'show'])->name('produto.lista')->middleware('auth');
+Route::get('/produtos', [ProdutoController::class,'show'])->name('produto.lista');
 
-Route::get('/produtos/formulario', [ProdutoController::class,'index'])->name('produto.formulario')->middleware('auth');
-Route::get('/produtos/formulario/{id}', [ProdutoController::class,'edit'])->name('produto.formulario.edit')->middleware('auth');
-Route::post('/produtos/insere', [ProdutoController::class,'create'])->name('produto.insere')->middleware('auth');
-Route::post('/produtos/edicao/{id}', [ProdutoController::class,'update'])->name('produto.edicao')->middleware('auth');
-Route::post('/produtos/exclusao/{id}', [ProdutoController::class,'delete'])->name('produto.exclusao')->middleware('auth');
+Route::get('/produtos/formulario', [ProdutoController::class,'index'])->name('produto.formulario');
+Route::get('/produtos/formulario/{id}', [ProdutoController::class,'edit'])->name('produto.formulario.edit');
+Route::post('/produtos/insere', [ProdutoController::class,'create'])->name('produto.insere');
+Route::post('/produtos/edicao/{id}', [ProdutoController::class,'update'])->name('produto.edicao');
+Route::post('/produtos/exclusao/{id}', [ProdutoController::class,'delete'])->name('produto.exclusao');
 
 
 Route::get('/', function () {
