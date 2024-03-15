@@ -15,14 +15,12 @@ use App\Http\Controllers\ProdutoController;
 |->middleware('auth')
 */
 Route::get('/produtos', [ProdutoController::class,'show'])->name('produto.lista');
-Route::middleware('auth')->group(function () {
-
-
-Route::get('/produtos/formulario', [ProdutoController::class,'index'])->name('produto.formulario');
-Route::get('/produtos/formulario/{id}', [ProdutoController::class,'edit'])->name('produto.formulario.edit');
 Route::post('/produtos/insere', [ProdutoController::class,'create'])->name('produto.insere');
 Route::post('/produtos/edicao/{id}', [ProdutoController::class,'update'])->name('produto.edicao');
 Route::post('/produtos/exclusao/{id}', [ProdutoController::class,'delete'])->name('produto.exclusao');
+Route::middleware('auth')->group(function () {
+Route::get('/produtos/formulario', [ProdutoController::class,'index'])->name('produto.formulario');
+Route::get('/produtos/formulario/{id}', [ProdutoController::class,'edit'])->name('produto.formulario.edit');
 });
 
 
