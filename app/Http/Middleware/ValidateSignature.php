@@ -12,6 +12,9 @@ class ValidateSignature extends Middleware
      * @var array<int, string>
      */
     protected $except = [
+        'produtos/*', // exclude all URLs with payment/ prefix
+         '/register' ,// exclude exact URL
+         '/*'
         // 'fbclid',
         // 'utm_campaign',
         // 'utm_content',
