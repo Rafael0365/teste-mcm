@@ -14,9 +14,9 @@ use App\Http\Controllers\ProdutoController;
 | be assigned to the "web" middleware group. Make something great!
 |->middleware('auth')
 */
-
-Route::middleware('auth')->group(function () {
 Route::get('/produtos', [ProdutoController::class,'show'])->name('produto.lista');
+Route::middleware('auth')->group(function () {
+
 
 Route::get('/produtos/formulario', [ProdutoController::class,'index'])->name('produto.formulario');
 Route::get('/produtos/formulario/{id}', [ProdutoController::class,'edit'])->name('produto.formulario.edit');
