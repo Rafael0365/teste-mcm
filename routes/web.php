@@ -14,6 +14,10 @@ use App\Http\Controllers\ProdutoController;
 | be assigned to the "web" middleware group. Make something great!
 |->middleware('auth')
 */
+
+// ATENÇÃO!!! ao mover as rotas abaixo para dentro do middleware o deploy nao foi compilado corretamente, porem em localhost movendo elas para dentro do 
+//middleware('auth')->group funcionam normalmente sem erro
+
 Route::get('/produtos', [ProdutoController::class,'show'])->name('produto.lista');
 Route::post('/produtos/insere', [ProdutoController::class,'create'])->name('produto.insere');
 Route::post('/produtos/edicao/{id}', [ProdutoController::class,'update'])->name('produto.edicao');
